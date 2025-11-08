@@ -4,12 +4,18 @@ from tkinter import messagebox
 import re
 import datetime
 import threading
+import os
+from dotenv import load_dotenv
 
 class Registration:
     def __init__(self) -> None:
-        gc = pygsheets.authorize(service_account_file="tigerhacks-2025-a9939a7a77ae.json")
-        reg = gc.open_by_url("https://docs.google.com/spreadsheets/d/1lMcM0t5C3rs0drZ9IJ9A4cNIhgo1ATXnwFJYj8IxBNQ/")
-        chk = gc.open_by_url("https://docs.google.com/spreadsheets/d/1L6DsVAME2TIyFEGtQjTmRWZmMPhRx4xP_Brz-ylxaUc/")
+        load_dotenv()
+        service_account_file = os.getenv("SERVICE_ACCOUNT_FILE")
+        reg_sheet_url = os.getenv("REG_SHEET_URL")
+        checkin_sheet_url = os.getenv("CHECKIN_SHEET_URL")
+        gc = pygsheets.authorize(service_account_file=service_account_file)
+        reg = gc.open_by_url(reg_sheet_url)
+        chk = gc.open_by_url(checkin_sheet_url)
         self.sheet = reg.sheet1
         self.check_in_sheet = chk.sheet1
         self._reg_cache = None

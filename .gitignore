@@ -1,6 +1,8 @@
+
 # Ignore Google service account credentials and other secrets
 *.json
 !requirements*.json
+.env
 
 # Python
 __pycache__/
