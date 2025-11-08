@@ -1,0 +1,17 @@
+# Ignore Google service account credentials and other secrets
+*.json
+!requirements*.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other
+.env

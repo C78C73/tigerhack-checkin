@@ -3,6 +3,14 @@ script to simplify registering tigerhacks participants
 
 https://erikrood.com/Posts/py_gsheets.html follow this guide to get creds.json file and permissions added to the service account for the sheets
 
+## Security Warning
+
+**Never commit your Google service account JSON or other secrets to GitHub!**
+
+- Always add credential files (e.g., `*.json`) to `.gitignore`.
+- If secrets were pushed, revoke and rotate them immediately.
+- Each user should download their own credentials and place them locally.
+
 ## Setup & Troubleshooting
 
 ### Step-by-step directions
