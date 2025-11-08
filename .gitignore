@@ -3,6 +3,7 @@
 *.json
 !requirements*.json
 .env
+tigerhacks-2025-a9939a7a77ae.json
 
 # Python
 __pycache__/
